@@ -1,7 +1,7 @@
-
+<!-- 
 //include CSS Style Sheet
 echo "<link rel='stylesheet' type='text/css' href='style.css' />";
-?>
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -81,9 +81,9 @@ echo "<link rel='stylesheet' type='text/css' href='style.css' />";
                                     <h3 class="text-white-50 mb-5">Please enter your login and password!</h3>
 
                                     <div class="form-outline form-white mb-4">
-                                        <input type="email" id="typeEmailX" class="form-control form-control-lg" />
+                                        <input type="text" id="username" class="form-control form-control-lg" />
                                         <label class="form-label" for="typeEmailX">
-                                            <h3>Email </h3>
+                                            <h3>Username </h3>
                                         </label>
                                     </div>
 
@@ -127,3 +127,31 @@ echo "<link rel='stylesheet' type='text/css' href='style.css' />";
 </body>
 
 </html>
+<?php
+include 'connection.php';
+if(isset($_POST['submit']))
+{
+	$aa=$_POST['username'];
+	$bb=$_POST['password'];
+
+	if($aa=='' || $bb=='')
+	{
+		echo "<script>window.alert('Username or password is empty')</script>";
+	}
+	else
+	{
+		$query="select * from users where username='$aa' and password='$bb'";
+		$run=mysqli_query($conn,$query);
+		if(mysqli_num_rows($run)>0)
+		{
+			$_SESSION['username']=$aa;
+			echo "<script>window.open('main.php','_self')</script>";
+		}
+		else
+		{
+			echo "<script>window.alert('Invalid user')</script>";
+		}
+	}
+}
+mysqli_close($conn);
+?>
