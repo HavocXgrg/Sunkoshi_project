@@ -81,15 +81,15 @@ echo "<link rel='stylesheet' type='text/css' href='style.css' />";
                                     <h3 class="text-white-50 mb-5">Please enter your login and password!</h3>
 
                                     <div class="form-outline form-white mb-4">
-                                        <input type="text" id="username" class="form-control form-control-lg" />
-                                        <label class="form-label" for="typeEmailX">
+                                        <input type="text" name ="username" class="form-control form-control-lg" />
+                                        <label class="form-label" for="username">
                                             <h3>Username </h3>
                                         </label>
                                     </div>
 
                                     <div class="form-outline form-white mb-4">
-                                        <input type="password" id="typePasswordX" class="form-control form-control-lg" />
-                                        <label class="form-label" for="typePasswordX">
+                                        <input type="password" name="password" class="form-control form-control-lg" />
+                                        <label class="form-label" for="password">
                                             <h3>Password</h3>
                                         </label>
                                     </div>
