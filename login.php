@@ -1,31 +1,4 @@
-<?php
-if ($_POST) {
-    $pname = $_POST['pname'];
-    $pimage = $_POST['pimage'];
-    $pdescription = $_POST['pdescription'];
 
-    $server = "localhost";
-    $user = "root";
-    $password = "";
-    $database = "mydatabase";
-
-    //establish the connection with database
-    $con = mysqli_connect($server, $user, $password, $database);
-    //write necessary query
-
-    $sql = "INSERT INTO phone(Product_Name, Product_Image, Product_Description) VALUES('$pname', '$pimage','$pdescription')";
-
-    //ececute the query
-
-    $res = mysqli_query($con, $sql);
-    if ($res == true) {
-        echo "success";
-    } else
-        echo "Fail";
-}
-
-?>
-<?php
 //include CSS Style Sheet
 echo "<link rel='stylesheet' type='text/css' href='style.css' />";
 ?>
@@ -109,12 +82,16 @@ echo "<link rel='stylesheet' type='text/css' href='style.css' />";
 
                                     <div class="form-outline form-white mb-4">
                                         <input type="email" id="typeEmailX" class="form-control form-control-lg" />
-                                        <label class="form-label" for="typeEmailX"><h3>Email </h3></label>
+                                        <label class="form-label" for="typeEmailX">
+                                            <h3>Email </h3>
+                                        </label>
                                     </div>
 
                                     <div class="form-outline form-white mb-4">
                                         <input type="password" id="typePasswordX" class="form-control form-control-lg" />
-                                        <label class="form-label" for="typePasswordX"><h3>Password</h3></label>
+                                        <label class="form-label" for="typePasswordX">
+                                            <h3>Password</h3>
+                                        </label>
                                     </div>
 
                                     <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
